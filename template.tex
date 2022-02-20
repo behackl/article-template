@@ -1,0 +1,108 @@
+\pdfoutput=1
+\documentclass[12pt,reqno]{amsart}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[draft=false,kerning=true]{microtype}
+
+\usepackage[margin=0.9in, top=1.2in, bottom=1in]{geometry}
+
+\usepackage{amsthm, amsmath, amsfonts}
+\usepackage{mathtools}
+\usepackage{enumerate, subcaption}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows,backgrounds,calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.12}
+\graphicspath{{.}{./figures}}
+
+\usepackage{todonotes}
+
+\usepackage{hyperref}
+
+
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{notation}{Notation}
+\newtheorem*{observation}{Observation}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\renewcommand{\MR}[1]{}
+
+\newcommand{\TODO}[1]{\par\fbox{\begin{minipage}{0.9\linewidth}\textbf{TODO:} #1\end{minipage}}\par}
+\newcommand{\DLMF}[2]{\cite[\href{http://dlmf.nist.gov/#1.E#2}{#1.#2}]{NIST:DLMF:v1.0.10}}
+\newcommand{\OEIS}[1]{\text{\href{https://oeis.org/#1}{{\small \tt #1}}}}
+
+\DeclareSymbolFont{cmcal}{OMS}{cmsy}{m}{n}
+\SetSymbolFont{cmcal}{bold}{OMS}{cmsy}{b}{n}
+\DeclareSymbolFontAlphabet{\mathcal}{cmcal}
+
+\newcommand{\N}[0]{\mathbb{N}}
+\newcommand{\Z}[0]{\mathbb{Z}}
+\newcommand{\R}[0]{\mathbb{R}}
+\newcommand{\C}[0]{\mathbb{C}}
+\renewcommand{\P}[0]{\mathbb{P}}
+\newcommand{\E}[0]{\mathbb{E}}
+\newcommand{\V}[0]{\mathbb{V}}
+
+
+\let\Reold\Re
+\let\Re\relax
+\let\Imold\Im
+\let\Im\relax
+
+\DeclareMathOperator{\Re}{Re}
+\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Res}{Res}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\iverson}{\llbracket}{\rrbracket}
+
+
+\title[Short title]{This is a long title for an interesting article}
+
+\author[T.~ODO]{TODO}
+
+\keywords{TODO}
+\subjclass[2010]{TODO}
+
+\begin{document}
+
+\begin{abstract}
+This is my article template.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+All sorts of things are explained and introduced here. We include
+a reference to~\cite{Hackl:2018:shape-parameters-trees} to avoid problems
+with BibTeX. A sample figure is given in~\ref{fig:grid}.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.9\linewidth]{gridfun.pdf}
+  \caption{The branches of a grid graph colored based on
+    the number of path reduction iterations they survive.
+  }\label{fig:grid}
+\end{figure}
+
+\bibliographystyle{plain}
+\bibliography{template}
+
+\end{document}
+
